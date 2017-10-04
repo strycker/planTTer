@@ -1,0 +1,339 @@
+
+
+/* user defined css to override Flask+Bootstrap defaults */
+
+
+/* Import the font file with the icons in it */
+@font-face {
+  font-family: "casper-icons";
+  src:url("../fonts/casper-icons.eot?v=1");
+  src:url("../fonts/casper-icons.eot?v=1#iefix") format("embedded-opentype"),
+    url("../fonts/casper-icons.woff?v=1") format("woff"),
+    url("../fonts/casper-icons.ttf?v=1") format("truetype"),
+    url("../fonts/casper-icons.svg?v=1#icons") format("svg");
+  /* font-weight: lighter; */
+  font-weight: normal;
+  /* font-weight: 200; */
+  font-style: normal;
+}
+
+
+html {
+  font-family: 'Nunito', 'Noto Sans', 'Quicksand', 'Raleway', 'Lato', "Helvetica Neue", Helvetica, sans-serif, "Open Sans", Arial, Roboto, Futura, monospace;
+  /* background: #FFFFFF url("/static/img/IMG_6884_5184x3256.png"); */
+  /*
+  min-height:100%;
+  min-width:100%;
+  */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  -moz-background-size: cover;
+}
+
+
+.navbar {
+  border: none;
+  /* background: rgba(200, 200, 200, 0.4); */
+  /* background: rgba(200, 200, 200, 1.0); */
+  /* background: rgba(200, 200, 200, 1.0); */
+  /* background: none !important; */
+  /* background: rgba(0, 0, 0, 0.4); */
+  background: none
+}
+
+/* navbar */
+.navbar-default {
+  /*
+  background-color: #F8F8F8;
+  border-color: #E7E7E7;
+  */
+  /* background: rgba(50, 50, 50, 1.0); */
+  background: rgba(8, 15, 8, 1.0);
+}
+
+/* Title */
+.navbar-default .navbar-brand {
+    color: #AAAAAA;
+    font-weight: bold;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #CCCCCC;
+    font-weight: bold;
+}
+/* Link */
+.navbar-default .navbar-nav > li > a {
+    color: #AAAAAA;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #CCCCCC;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #0000FF;
+    background-color: #E7E7E7;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #FF00FF;
+    /* background-color: #D5D5D5; */
+}
+
+/* Caret
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-top-color: #777;
+    border-bottom-color: #777;
+}
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+    border-top-color: #333;
+    border-bottom-color: #333;
+}
+.navbar-default .navbar-nav > .open > a .caret,
+.navbar-default .navbar-nav > .open > a:hover .caret,
+.navbar-default .navbar-nav > .open > a:focus .caret {
+    border-top-color: #555;
+    border-bottom-color: #555;
+}
+/* Mobile version *
+.navbar-default .navbar-toggle {
+    border-color: #DDD;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #DDD;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #CCC;
+}
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #777;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+          color: #333;
+    }
+}
+/**/
+
+
+
+a {
+color: white;
+text-decoration: none;
+}
+
+
+a:hover {
+  color: #AAAAAA;
+  text-decoration: none;
+}
+
+
+/* you NEED this to override the body background, otherwise the html one won't show through */
+body {
+  font-size: 10px;
+  background: none !important
+}
+
+
+.container {
+  font-family: 'Nunito', 'Noto Sans', 'Quicksand', 'Raleway', 'Lato', "Helvetica Neue", Helvetica, sans-serif, "Open Sans", Arial, Roboto, Futura, monospace;
+  color: #FFFFFF;
+}
+
+
+.page-content {
+  padding: 1rem 1rem;
+  background: rgba(8, 15, 8, 0.7);
+}
+
+
+.centered {
+  text-align: center;
+}
+
+
+.message .logo img {
+  width: 60%;
+  height: 60%;
+  opacity: 1.0;
+
+
+/*
+  padding: 0rem 0rem 0rem 0rem;
+  top: 0;
+  left: 0;
+  float: left;
+*/
+
+/*
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0rem -5rem 0rem;
+  position: relative;
+  margin: 0rem 0rem 0rem 0rem;
+*/
+}
+
+
+
+
+
+
+
+/*
+.sk-chasing-dots {
+  margin: 40px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  -webkit-animation: sk-chasingDotsRotate 2s infinite linear;
+          animation: sk-chasingDotsRotate 2s infinite linear; }
+  .sk-chasing-dots .sk-child {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: #333;
+    border-radius: 100%;
+    -webkit-animation: sk-chasingDotsBounce 2s infinite ease-in-out;
+            animation: sk-chasingDotsBounce 2s infinite ease-in-out; }
+  .sk-chasing-dots .sk-dot2 {
+    top: auto;
+    bottom: 0;
+    -webkit-animation-delay: -1s;
+            animation-delay: -1s; }
+@-webkit-keyframes sk-chasingDotsRotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+@keyframes sk-chasingDotsRotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+@-webkit-keyframes sk-chasingDotsBounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+@keyframes sk-chasingDotsBounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+*/
+
+
+
+
+body > .inner {
+  display: none;
+}
+
+body.pg-loaded > .inner {
+  display: block;
+}
+
+
+
+.loading-message {
+  color: #FF9900;
+  font-size: 50px;
+  /*font-weight: bold;*/
+}
+
+
+.splash .logo img {
+  width: 60%;
+  height: 60%;
+  opacity: 1.0;
+}
+
+
+
+/* need this for a fixed nav bar */
+body {
+  padding-top: 50px;
+}
+
+
+/* @media (min-width: @screen-lg-min) {
+@media (min-height: 500px) {
+  body {
+    padding-top: 100px;
+    background: red;
+  }
+}
+*/
+
+
+/* @grid-float-breakpoint defaulted to 768px */
+/* @media (min-width: @grid-float-breakpoint) { */
+/* @media (min-width: @screen-sm-min) { */
+@media (min-width: 768px) {
+
+  body {
+    /* padding-top: 50px; */
+    font-size: 30px;
+    background: none !important
+  }
+
+  .navbar {
+    border: none;
+    /* background: rgba(200, 200, 200, 0.4); */
+    /* background: rgba(200, 200, 200, 1.0); */
+    /* background: rgba(200, 0, 0, 1.0); */
+    /* background: #FFFFFF url("/static/img/IMG_6884_5184x3256.png"); */
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .navbar-default {
+      background: rgba(8, 15, 8, 1.0);
+  }
+
+  .navbar-default .navbar-brand {
+      color: #CCCCCC;
+      font-weight: bold;
+  }
+  .navbar-default .navbar-brand:hover,
+  .navbar-default .navbar-brand:focus {
+      color: #FFFFFF;
+      font-weight: bold;
+  }
+  .navbar-default .navbar-nav > li > a {
+      color: #CCCCCC;
+  }
+  .navbar-default .navbar-nav > li > a:hover,
+  .navbar-default .navbar-nav > li > a:focus {
+      color: #FFFFFF;
+  }
+
+  .message .logo img {
+    width: 40%;
+    height: 40%;
+    opacity: 1.0;
+  }
+
+  .splash .logo img {
+    width: 60%;
+    height: 60%;
+    opacity: 1.0;
+  }
+
+}
+
+

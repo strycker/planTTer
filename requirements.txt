@@ -1,0 +1,75 @@
+pip-upgrader
+
+click==6.7
+Flask==0.12
+itsdangerous==0.24
+Jinja2==2.9.3
+MarkupSafe==0.23
+virtualenv==15.1.0
+Werkzeug==0.11.15
+flask-appconfig>=0.10
+flask-bootstrap
+flask-nav
+flask-debug
+flask-wtf
+flask-oauth
+flask-oauthlib
+flask-login
+flask-session
+flask-sqlalchemy
+flask-oauth2-login
+# flask-social
+# flask-sqlalchemy-session
+
+boto3
+botocore
+# boto3.session
+# botocore.exceptions
+
+# google-api-python-client
+
+# os
+# sys
+# socket
+# threading
+# logging
+
+# json
+# dateutil
+# dateutil.parser
+# pandas
+# httplib2
+# datetime
+# argparse
+
+apiclient
+oauth2client
+# oauth2client.file
+
+
+# com.google.api.services.calendar.Calendar
+# flaskrun
+# flask-run
+
+# flask-oauth2-login
+
+# multiprocessing
+# ssl
+requests
+requests-oauthlib
+
+
+datetime
+pytz
+tzlocal
+
+# werkzeug.wrappers
+# signal
+
+
+
+pymysql
+dominate
+
+
+

@@ -1,0 +1,80 @@
+{# This simple template derives from ``base.html``. See ``base.html`` for
+   more information about template inheritance. #}
+{%- extends "base.html" %}
+
+{# Loads some of the macros included with Flask-Bootstrap. We are using the
+   utils module here to automatically render Flask's flashed messages in a
+   bootstrap friendly manner #}
+{% import "bootstrap/utils.html" as utils %}
+
+
+
+
+{% block head %}
+{{super()}}
+{%- endblock %}
+
+
+
+
+{% block title %}planTTer - About{% endblock %}
+
+
+
+{# Inside the ``content`` is where you should place most of your own stuff.
+   This will keep scripts at the page end and a navbar you add on later
+   intact. #}
+{% block content %}
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NSR7GQ8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Google Code for site_conversion Conversion Page -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 848386233;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "QgiPCOKLnHIQubHFlAM";
+var google_remarketing_only = false;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/848386233/?label=QgiPCOKLnHIQubHFlAM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+  <div class="container">
+  {%- with messages = get_flashed_messages(with_categories=True) %}
+  {%- if messages %}
+    <div class="row">
+      <div class="col-md-12">
+        {{utils.flashed_messages(messages)}}
+      </div>
+    </div>
+  {%- endif %}
+  {%- endwith %}
+    <article>
+      <section class="page-content">
+        <h6></h6>
+        <!--
+        <div class="message">
+        <a class="logo">
+        <img src="static/img/logo.svg">
+        </a>
+        </div>
+        -->
+
+        <h1>About</h1>
+        planTTer is for to strengthening your existing real-world friendships, communities, and other relationships.<br><br>
+        By coordinating events, calendars, venues, and people, planTTer enables your community to GROW.
+      </section>
+    </article>
+  </div>
+{%- endblock %}

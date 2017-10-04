@@ -1,0 +1,203 @@
+{# ``base.html`` is the template all our other templates derive from. While
+   Flask-Bootstrap ships with its own base, it is good form to create a custom
+   one for our app, as it allows customizing some aspects.
+
+   Deriving from bootstap/base.html gives us a basic page scaffoling.
+
+   You can find additional information about template inheritance at
+
+   http://jinja.pocoo.org/docs/templates/#template-inheritance
+#}
+{%- extends "bootstrap/base.html" %}
+
+{# We also set a default title, usually because we might forget to set one.
+   In our sample app, we will most likely just opt not to change it #}
+{% block title %}planTTer{% endblock %}
+
+{# While we are at it, we also enable fixes for legacy browsers. First we
+   import the necessary macros: #}
+{% import "bootstrap/fixes.html" as fixes %}
+
+{# Then, inside the head block, we apply these. To not replace the header,
+   ``super()`` is used: #}
+{% block head %}
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+{{super()}}
+
+  <meta name="description" content="planTTer social platform">
+
+  <meta name="keywords" content="plantter">
+
+  <meta name="author" content="Glenn Strycker">
+
+  <!--
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  -->
+
+  <link href="https://fonts.googleapis.com/css?family=Nunito%7CNoto+Sans%7CQuicksand%7CRaleway%7CLato" rel="stylesheet">
+
+  <!--
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/gradients.css" rel="stylesheet">
+  -->
+
+
+  <link rel="apple-touch-icon" sizes="57x57" href="{{url_for('static', filename='img/apple-icon-57x57.png')}}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{{url_for('static', filename='img/apple-icon-60x60.png')}}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{url_for('static', filename='img/apple-icon-72x72.png')}}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{url_for('static', filename='img/apple-icon-76x76.png')}}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{url_for('static', filename='img/apple-icon-114x114.png')}}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{{url_for('static', filename='img/apple-icon-120x120.png')}}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{{url_for('static', filename='img/apple-icon-144x144.png')}}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{{url_for('static', filename='img/apple-icon-152x152.png')}}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static', filename='img/apple-icon-180x180.png')}}">
+  <link rel="icon" type="image/png" sizes="192x192"  href="{{url_for('static', filename='img/android-icon-192x192.png')}}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='img/favicon-32x32.png')}}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{url_for('static', filename='img/favicon-96x96.png')}}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static', filename='img/favicon-16x16.png')}}">
+  <link rel="manifest" href="static/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="static/img/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- this next line is to ensure Chrome behaves as expected with screen width in css -->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+
+
+{#- Docs: http://pythonhosted.org/Flask-Bootstrap/macros.html#fixes
+   The sample application already contains the required static files. #}
+{{fixes.ie8()}}
+{%- endblock %}
+
+
+
+{# Adding our own CSS files is also done here. Check the documentation at
+   http://pythonhosted.org/Flask-Bootstrap/basic-usage.html#available-blocks
+   for an overview. #}
+{% block styles -%}
+    {{super()}}  {# do not forget to call super or Bootstrap's own stylesheets
+                    will disappear! #}
+    <link rel="stylesheet" type="text/css"
+          href="{{url_for('static', filename='sample-app.css')}}">
+
+    <!-- <link href="assets/css/please-wait.css" rel="stylesheet"> -->
+
+    <link rel="stylesheet" type="text/css"
+          href="{{url_for('static', filename='css/please-wait.css')}}">
+
+    <link rel="stylesheet" type="text/css"
+          href="{{url_for('static', filename='css/spinkit.css')}}">
+
+    <link rel="stylesheet" type="text/css"
+          href="{{url_for('static', filename='css/spinners/6-chasing-dots.css')}}">
+
+    <link rel="stylesheet" type="text/css"
+          href="{{url_for('static', filename='css/styles.css')}}">
+
+<!--
+-->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NSR7GQ8');</script>
+<!-- End Google Tag Manager -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-101393084-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(window).load(function() {
+        $(".inner").finish();
+$(window).load(function() {
+  $(".inner").fadeOut("slow");
+})
+</script>
+
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/a1dba72f005b841aa6387a165/44831804a5763aacd5ede8eea.js");</script>
+
+{% endblock %}
+
+
+
+
+{# Finally, round things out with navigation #}
+{% block navbar %}
+
+<!-- this is in block "navbar", but really this is jus the first part to come after the body tag -->
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NSR7GQ8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Google Code for site_conversion Conversion Page -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 848386233;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "QgiPCOKLnHIQubHFlAM";
+var google_remarketing_only = false;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/848386233/?label=QgiPCOKLnHIQubHFlAM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+
+
+
+<!-- use the following to enable a splash screen
+
+    <div class="inner" ng-view>
+    </div>
+    <script type="text/javascript" src="static/js/please-wait.min.js"></script>
+    <script type="text/javascript">
+      window.loading_screen = window.pleaseWait({
+        /*logo: "static/img/logo.svg",*/
+        logo: "",
+        backgroundColor: "#083012",
+        loadingHtml: "<div class='splash'><a class='logo'><img src='static/img/logo.svg' alt=''></a></div><p class='loading-message'>Plan Life Together!</p>"
+      });
+    </script>
+
+    <script type="text/javascript">
+      window.loading_screen.finish();
+    </script>
+-->
+
+
+
+
+
+{% if username is defined %}
+{{nav.frontend_top_extended_loggedin.render(renderer='customExtended')}}
+{% else %}
+{{nav.frontend_top_extended_default.render(renderer='customExtended')}}
+{% endif %}
+
+
+
+{% endblock %}
+

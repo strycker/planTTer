@@ -1,0 +1,155 @@
+{# This simple template derives from ``base.html``. See ``base.html`` for
+   more information about template inheritance. #}
+{%- extends "base.html" %}
+
+{# Loads some of the macros included with Flask-Bootstrap. We are using the
+   utils module here to automatically render Flask's flashed messages in a
+   bootstrap friendly manner #}
+{% import "bootstrap/utils.html" as utils %}
+
+
+
+
+{% block head %}
+{{super()}}
+
+<!-- MAILCHIMP pop-up to go at the end of the head block
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+<script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us16.list-manage.com","uuid":"a1dba72f005b841aa6387a165","lid":"bd3edb80db"}) })</script>
+-->
+
+{%- endblock %}
+
+
+
+
+
+{# Inside the ``content`` is where you should place most of your own stuff.
+   This will keep scripts at the page end and a navbar you add on later
+   intact. #}
+{% block content %}
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NSR7GQ8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Google Code for site_conversion Conversion Page -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 848386233;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "QgiPCOKLnHIQubHFlAM";
+var google_remarketing_only = false;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/848386233/?label=QgiPCOKLnHIQubHFlAM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+
+  <div class="container">
+  {%- with messages = get_flashed_messages(with_categories=True) %}
+  {%- if messages %}
+    <div class="row">
+      <div class="col-md-12">
+        {{utils.flashed_messages(messages)}}
+      </div>
+    </div>
+  {%- endif %}
+  {%- endwith %}
+
+    <section class="page-content">
+      <h6></h6>
+      <article>
+        <!--
+        <h1>planTTer</h1>
+        -->
+        <div class="centered">
+        <div class="message">
+        <a class="logo">
+        <img src="static/img/logo.svg" alt="">
+        </a>
+        </div>
+        </div>
+
+        <div class="centered">
+        <p>Hello, {% if username is defined %}{{ username }}, {% else %}{% endif %}welcome to planTTer!</p><br>
+        </div>
+
+        <!--
+        <br><br><br>
+        <h1>Name = {{ username }}</h1>
+        <br><br><br>
+        -->
+
+        <!--
+        {% if auth_url is defined %}<br><br><h2>Click <a href="{{ auth_url }}"><font color=#FF0000>here</font></a> to login!</h2><br><br>{% else %}{% endif %}
+        -->
+
+        <!--
+        planTTer is a platform designed to enrich your existing communities, groups, 1x1 friendships, and other relationships.<br><br>
+        We want our users to have stronger, healthier, more active community lives -- in REAL life.<br><br>
+        Please take a look at our site (very much in-progress), read our blog posts, and sign up for updates.<br><br>
+        Most importantly, please give us feedback!<br><br>
+        We need your ideas and descriptions of the problems that you face in your communities and friendship groups.<br><br>
+        Email your stories to <a href="mailto:glenn@plantter.net">glenn@plantter.net</a><br><br>
+        <div class="centered">
+        <h2>
+        Raise Your Friendships<br>
+        Grow Your Communities<br>
+        Let's Plan Life Together!<br><br><br>
+        </h2>
+        </div>
+        -->
+      </article>
+
+<!--
+      <article>
+        <div class="centered">
+          <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+          <form action="//planTTer.us16.list-manage.com/subscribe/post?u=a1dba72f005b841aa6387a165&amp;id=bd3edb80db" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+            <h2>Subscribe to our mailing list</h2>
+              <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+              <div class="mc-field-group">
+                <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+                </label>
+                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+              </div>
+              <div class="mc-field-group">
+                <label for="mce-FNAME">First Name </label>
+                <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+              </div>
+              <div class="mc-field-group">
+                <label for="mce-LNAME">Last Name </label>
+                <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+              </div>
+              <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+              </div>    <!-a- real people should not fill this in and expect good things - do not remove this or risk form bot signups-a->
+              <!-a-
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a1dba72f005b841aa6387a165_bd3edb80db" tabindex="-1" value=""></div>
+              -a->
+              <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+            </div>
+          </form>
+          <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+          <br>
+          <br>
+          <br>
+        </div>
+      </article>
+-->
+
+    </section>
+   <div class="push"></div>
+  </div>
+{%- endblock %}
